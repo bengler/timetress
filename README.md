@@ -27,6 +27,11 @@ TimetressNorway.nextHoliday('fathersday', new Date(2013, 7, 1))
   TimetressNorway.nthWorkdayAfter(2, new Date(2013, 10, 8))
 ```
 
+## Run tests
+```
+  cake test
+```
+
 ## License
 
 Copyright (C) Bengler AS
