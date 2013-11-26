@@ -2,6 +2,8 @@
 
 Javascript port of kytrinyx's 'timetress' Ruby Gem
 
+Knows about workdays and holidays, public and otherwise. Answers the age-old question 'When is mothersday this year?'
+
 ## Installation
 
 ```
@@ -25,6 +27,11 @@ TimetressNorway.nextHoliday('fathersday', new Date(2013, 7, 1))
 ### Find the next workday two days after a date
 ```
   TimetressNorway.nthWorkdayAfter(2, new Date(2013, 10, 8))
+```
+
+### See dates for all public holidays in Norway for 2013
+```
+  TimetressNorway.officialHolidays(2013)
 ```
 
 ## Run tests
