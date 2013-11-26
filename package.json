@@ -1,0 +1,29 @@
+{
+  "name": "timetress",
+  "version": "0.0.0",
+  "description": "Knows about holidays and workdays. At least in Norway, for now.",
+  "main": "index.js",
+  "scripts": {
+    "pretest": "cake build",
+    "prepublish": "cake build",
+    "test": "node_modules/.bin/mocha -r expect.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:bengler/timetress.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "coffee-script": "latest",
+    "mocha": "latest",
+    "expect.js": "latest",
+    "should": "latest"
+  },
+  "keywords": [
+    "time",
+    "holidays",
+    "calendar"
+  ],
+  "author": "Bengler AS",
+  "license": "MIT"
+}
