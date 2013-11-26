@@ -14,7 +14,7 @@ npm install timetress
 
 You must implement your own national holidays as a subclass of Timetress. See TimetressNorway for an example.
 
-Here are some examples for the implementation for TimtressNorway:
+Here are some examples for the implementation for TimetressNorway:
 
 ### Find out when the next named holiday is:
 
