@@ -24,9 +24,10 @@ TimetressNorway.nextHoliday('fathersday')
 TimetressNorway.nextHoliday('fathersday', new Date(2013, 7, 1))
 ```
 
-### Find the next workday two days after a date
+### Find the next or previous workday two days after a date
 ```
   TimetressNorway.nthWorkdayAfter(2, new Date(2013, 10, 8))
+  TimetressNorway.nthWorkdayBefore(2, new Date(2013, 10, 8))
 ```
 
 ### See dates for all public holidays in Norway for 2013
