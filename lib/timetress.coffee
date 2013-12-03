@@ -92,10 +92,10 @@ class Timetress
   @officialHolidays: (year) ->
     throw @::beMoreSpecificError
 
-  @mothersday: (year) ->
+  @mothersDay: (year) ->
     throw @::beMoreSpecificError
 
-  @fathersday: (year) ->
+  @fathersDay: (year) ->
     throw @::beMoreSpecificError
 
   @labourDay: (year) ->

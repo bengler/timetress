@@ -42,8 +42,8 @@ describe "Timetress", ->
   describe "Exceptions for beMoreSpecificError", ->
     it "throws error on methods that should be implemented in a country spesific class", ->
       (-> Timetress.officialHolidays(2013)).should.throw(Timetress::beMoreSpecificError)
-      (-> Timetress.mothersday(2013)).should.throw(Timetress::beMoreSpecificError)
-      (-> Timetress.fathersday(2013)).should.throw(Timetress::beMoreSpecificError)
+      (-> Timetress.mothersDay(2013)).should.throw(Timetress::beMoreSpecificError)
+      (-> Timetress.fathersDay(2013)).should.throw(Timetress::beMoreSpecificError)
       (-> Timetress.labourDay(2013)).should.throw(Timetress::beMoreSpecificError)
       (-> Timetress.nationalHoliday(2013)).should.throw(Timetress::beMoreSpecificError)
       (-> Timetress.isWorkday(new Date(Date.UTC(2013, 10, 26)))).should.throw(Timetress::beMoreSpecificError)
@@ -104,8 +104,8 @@ describe "TimetressNorway", ->
 
 
   it "implements its own special holidays ", ->
-    TimetressNorway.mothersday(2013).toString().should.equal new Date(Date.UTC(2013, 1, 10)).toString()
-    TimetressNorway.fathersday(2013).toString().should.equal new Date(Date.UTC(2013, 10, 10)).toString()
+    TimetressNorway.mothersDay(2013).toString().should.equal new Date(Date.UTC(2013, 1, 10)).toString()
+    TimetressNorway.fathersDay(2013).toString().should.equal new Date(Date.UTC(2013, 10, 10)).toString()
     TimetressNorway.labourDay(2013).toString().should.equal new Date(Date.UTC(2013, 4, 1)).toString()
     TimetressNorway.nationalHoliday(2013).toString().should.equal new Date(Date.UTC(2013, 4, 17)).toString()
     TimetressNorway.firstDayOfChristmas(2013).toString().should.equal new Date(Date.UTC(2013, 11, 25)).toString()
@@ -127,6 +127,6 @@ describe "TimetressNorway", ->
       'Thu, 26 Dec 2013 00:00:00 GMT'
     ]
   it "implement next and previous on special class holidays", ->
-    TimetressNorway.previousHoliday('fathersday', new Date(Date.UTC(2011, 11, 25))).toString().should.equal new Date(Date.UTC(2011, 10, 13)).toString()
-    TimetressNorway.nextHoliday('fathersday', new Date(Date.UTC(2011, 11, 25))).toString().should.equal new Date(Date.UTC(2012, 10, 11)).toString()
+    TimetressNorway.previousHoliday('fathersDay', new Date(Date.UTC(2011, 11, 25))).toString().should.equal new Date(Date.UTC(2011, 10, 13)).toString()
+    TimetressNorway.nextHoliday('fathersDay', new Date(Date.UTC(2011, 11, 25))).toString().should.equal new Date(Date.UTC(2012, 10, 11)).toString()
     TimetressNorway.nextHoliday('firstDayOfChristmas', new Date(Date.UTC(2011, 11, 25))).toString().should.equal new Date(Date.UTC(2011, 11, 25)).toString()

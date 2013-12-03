@@ -8,7 +8,7 @@ findExecutable = (executable, callback) ->
 build = (callback) ->
   exec 'mkdir -p lib', (err, stdout, stderr) ->
     throw new Error(err) if err
-    exec "coffee --compile --output lib/ src/", (err, stdout, stderr) ->
+    exec "coffee --compile --output lib/ lib/", (err, stdout, stderr) ->
       throw new Error(err) if err
       callback() if callback
     exec "browserify --standalone Timetress --ignore jquery  ./lib/timetress.js > ./lib/standalone.js"
@@ -43,7 +43,7 @@ dev_install = (callback = console.log) ->
       exec 'npm link .', (err, stdout) ->
         callback(stdout)
 
-task 'build', 'Build lib from src', -> build()
+task 'build', 'Build lib from coffeescript source', -> build()
 task 'test', 'Test project', -> test()
 task 'publish', 'Publish project to npm', -> publish()
 task 'dev-install', 'Install developer dependencies', -> dev_install()

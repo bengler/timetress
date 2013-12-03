@@ -19,7 +19,7 @@ Here are some examples for the implementation for TimetressNorway:
 ### Find out when the next named holiday is:
 
 ```
-TimetressNorway.fathersday(2014)
+TimetressNorway.fathersDay(2014)
 TimetressNorway.nextHoliday('fathersday')
 TimetressNorway.nextHoliday('fathersday', new Date(2013, 7, 1))
 ```

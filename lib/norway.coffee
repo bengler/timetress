@@ -2,10 +2,10 @@ Timetress = require "./timetress"
 
 class TimetressNorway extends Timetress
 
-  @mothersday:  (year) ->
+  @mothersDay:  (year) ->
     @secondSundayIn(@::FEBRUARY, year)
 
-  @fathersday: (year) ->
+  @fathersDay: (year) ->
     @secondSundayIn(@::NOVEMBER, year)
 
   @labourDay: (year) ->
