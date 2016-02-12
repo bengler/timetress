@@ -14,9 +14,10 @@
   },
   "dependencies": {},
   "devDependencies": {
+    "cake": "^0.1.1",
     "coffee-script": "latest",
-    "mocha": "latest",
     "expect.js": "latest",
+    "mocha": "^2.4.5",
     "should": "latest"
   },
   "keywords": [
