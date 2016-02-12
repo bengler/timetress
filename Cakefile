@@ -27,7 +27,7 @@ test = (callback = console.log) ->
   checkDependencies ->
     build ->
       exec "./node_modules/.bin/mocha \
-    --compilers coffee:coffee-script -R spec", (err, stdout) ->
+    --reporter spec --require should --compilers coffee:coffee-script/register --colors", (err, stdout) ->
         callback(err) if err
         callback(stdout) if stdout
 
