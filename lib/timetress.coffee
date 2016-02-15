@@ -106,28 +106,32 @@ class Timetress
 
   @nextHoliday: (holiday, givenDate) ->
     unless givenDate
-      givenDate = new Date()
-
-    givenDate.setHours(0)
-    givenDate.setMinutes(0)
-    givenDate.setSeconds(0)
+      today = new Date()
+      givenDate = new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate())
 
     throw new Error("givenDate must be a Date object") unless givenDate instanceof Date
-    theDay = @[holiday](givenDate.getFullYear())
-    if theDay.getTime() < givenDate.getTime()
-      theDay = @[holiday](givenDate.getFullYear()+1)
+    givenDate.setUTCHours(0)
+    givenDate.setUTCMinutes(0)
+    givenDate.setUTCSeconds(0)
+
+    theDay = @[holiday](givenDate.getUTCFullYear())
+    if givenDate.getTime() > theDay.getTime()
+      theDay = @[holiday](givenDate.getUTCFullYear() + 1)
     theDay
 
   @previousHoliday: (holiday, givenDate) ->
     unless givenDate
-      givenDate = new Date()
-    givenDate.setHours(0)
-    givenDate.setMinutes(0)
-    givenDate.setSeconds(0)
+      today = new Date()
+      givenDate = new Date(today.getUTCFullYear(), today.getUTCMonth(), today.getUTCDate())
+
     throw new Error("givenDate must be a Date object") unless givenDate instanceof Date
-    theDay = @[holiday](givenDate.getFullYear())
+    givenDate.setUTCHours(0)
+    givenDate.setUTCMinutes(0)
+    givenDate.setUTCSeconds(0)
+
+    theDay = @[holiday](givenDate.getUTCFullYear())
     if theDay.getTime() >= givenDate.getTime()
-      theDay = @[holiday](givenDate.getFullYear()-1)
+      theDay = @[holiday](givenDate.getUTCFullYear() - 1)
     theDay
 
   @sortDates: (date1, date2) ->
@@ -136,7 +140,7 @@ class Timetress
     return 0
 
   @daysUntilSunday: (date) ->
-    (7 - date.getDay()) % 7
+    (7 - date.getUTCDay()) % 7
 
   @secondSundayIn: (month, year) ->
     secondWeek = Date.UTC(year, month, 8)
