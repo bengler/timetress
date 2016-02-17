@@ -1,5 +1,5 @@
 {
-  "name": "timetress",
+  "name": "@bengler/timetress",
   "version": "0.0.3",
   "description": "Knows about holidays and workdays. At least in Norway, for now.",
   "main": "index.js",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git@github.com:bengler/timetress.git"
+    "url": "http://github.com/bengler/timetress.git"
   },
   "dependencies": {},
   "devDependencies": {
@@ -26,5 +26,8 @@
     "calendar"
   ],
   "author": "Bengler AS",
-  "license": "MIT"
+  "license": "MIT",
+  "publishConfig": {
+    "registry": "https://npm.bengler.no"
+  }
 }
